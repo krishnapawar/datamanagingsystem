@@ -59,6 +59,11 @@
     </li>
   </ul>
 </nav>
+							{% if messages %}
+							{% for m in messages %}
+							<div class="alert alert-{{m.tags}} text-center mt-2"><h3><i>{{ m }}</i></h3></div>
+							{% endfor %}
+							{% endif %}
 	</div>
 	{% block content %}
 	{% endblock %}
