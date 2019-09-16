@@ -1,0 +1,29 @@
+{% extends 'mytask/base.html' %}
+{% block content %}
+
+					<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							{% if messages %}
+							{% for m in messages %}
+							<div class="alert alert-{{m.tags}}">{{ m }}</div>
+							{% endfor %}
+							{% endif %}
+					    <div class="card mt-3">
+					        <div class="card-body">
+					        	<h1 id="t1"></h1>
+						<form class="form-group" method="post">
+							{% csrf_token %} 
+							Enter your name/नाम <input type="text" class="form-control" name="name" placeholder="enter your name/नाम  " required><br>
+							Enter your contact/मोबाइल नंबर <input type="number" class="form-control" name="contactno" id="co" placeholder="enter only number"><br>
+							Enter your District/जिला<input type="text" class="form-control" name="district" placeholder="enter your District " required><br>
+							<input type="submit" class="form-control btn btn-primary" name="submit" required=""><br>
+							<span id="t1" ></span>
+						</form>
+					</div>
+				</div>
+			</div>
+			{% include "mytask/rightsite.html"%}
+			</div>
+			</div>
+{% endblock %}

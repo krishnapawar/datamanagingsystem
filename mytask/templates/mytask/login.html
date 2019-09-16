@@ -1,0 +1,28 @@
+{% extends 'mytask/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+					<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							{% if messages %}
+							{% for m in messages %}
+							<div class="alert alert-{{m.tags}}">{{ m }}</div>
+							{% endfor %}
+							{% endif %}
+					    <div class="card mt-3">
+					        <div class="card-body">
+					        	<h1 id="t1"></h1>
+						<form class="form-group" method="post">
+							{% csrf_token %} 
+							{{ form|crispy }}
+							<input type="submit" class="form-control btn btn-primary" name="Login" required=""><br>
+							<span id="t1" ></span>
+						</form>
+					</div>
+				</div>
+			</div>
+			{% include "mytask/rightsite.html"%}
+			</div>
+			</div>
+{% endblock %}

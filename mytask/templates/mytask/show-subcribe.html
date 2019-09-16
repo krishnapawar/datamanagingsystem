@@ -1,0 +1,52 @@
+{% extends 'mytask/base.html' %}
+{% block content %}
+
+
+		<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+							{% if messages %}
+							{% for m in messages %}
+							<div class="alert alert-{{m.tags}}">{{ m }}</div>
+							{% endfor %}
+							{% endif %}
+				<div class="card text-center" >
+					<div class="card-body">
+						<table class="table ">
+							<tr class="table-primary">
+								<th>Name</th>
+								<th>Contact</th>
+								<th>District</th>
+								{% if user.is_authenticated %}
+								<th>Option</th>
+								{% else %}
+
+								{% endif %}
+							</tr>
+							{% for w in q %}
+							<tr>
+							<td>{{ w.name }}</td>
+							<td>{{ w.contactno }}</td>
+							<td>{{ w.district }}</td>
+							{% if user.is_authenticated %}
+							<td><button class="btn btn-danger"> <a href="{% url 'delete' w.id %} " style="color: black; text-decoration: none;" > Delete</a ></button>
+							<button class="btn btn-primary"> <a href="{% url 'update' w.id %} " style="color: black; text-decoration: none;" >Edit</a ></button></td>
+							{% else %}
+							{% endif %}
+							<tr>
+							{% endfor %}
+							<tr><th colspan="4">&copy krishna</th></tr>
+						</table>
+					</div>
+					<div class="card-body">
+						<table class="table table-striped">
+							
+						</table>
+					</div>
+				</div>
+			</div>
+			{% include "mytask/rightsite.html"%}
+		</div>
+	
+	</div>
+{% endblock %}

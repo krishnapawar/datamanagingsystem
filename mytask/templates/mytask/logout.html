@@ -1,0 +1,25 @@
+{% extends 'mytask/base.html' %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+	<div class="content-section">
+		<form method="Post">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border_botton mb-4">
+					<h2>Logout seccussfull...</h2>
+				</legend>
+				
+			</fieldset>
+			<div class="form-group">
+				Are you want to <a  href="{% url 'login' %}">Login</a>
+			</div>
+		</form>
+	</div>
+</div>
+{% include "mytask/rightsite.html"%}
+</div>
+</div>
+{% endblock%}

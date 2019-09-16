@@ -1,0 +1,17 @@
+
+						<div class="col-md-4">
+							{% if messages %}
+							{% for m in messages %}
+							<div class="alert alert-{{m.tags}}">{{ m }}</div>
+							{% endfor %}
+							{% endif %}
+					    <div class="card mt-3">
+					        <div class="card-body">
+					        	<ul>
+					        		<li>Home</li>
+					        		<li>Update</li>
+					        		<li>Eadit</li>
+					        	</ul>
+					</div>
+				</div>
+			</div>
