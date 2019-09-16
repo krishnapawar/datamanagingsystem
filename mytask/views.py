@@ -26,7 +26,7 @@ def showsub(request):
 
 class ContactDeleteView(LoginRequiredMixin,DeleteView):
 	model = contact
-	success_url = '/show/'
+	success_url = '/'
 
 
 class ContactUpdate(LoginRequiredMixin,UpdateView):
